@@ -102,3 +102,7 @@ func cargarStoresProcedures(db *sql.DB) {
 		}
 	}
 }
+
+func insertarDatos() {
+
+}

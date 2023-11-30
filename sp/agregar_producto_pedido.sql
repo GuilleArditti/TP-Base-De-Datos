@@ -5,7 +5,7 @@ declare
     is_producto_en_pedido bool;
     stock_disponible_en_producto int;
     estado_pedido text;
-    pedido_detalle_aux record;
+    pedido_detalle_aux table;
     monto_a_agregar float;
     
 begin
