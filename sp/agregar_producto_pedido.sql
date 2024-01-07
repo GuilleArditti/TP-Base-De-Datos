@@ -2,7 +2,7 @@ create or replace function agregar_producto_pedido(id_pedido_aux int, id_product
 declare
     operacion text;
     cantidad_aux int;
-    is_producto_en_pedido bool;
+    is_producto_en_pedido boolean;
     stock_disponible_en_producto int;
     estado_pedido text;
     pedido_detalle_aux table;
@@ -54,6 +54,7 @@ begin
     se deberá descontar dicha cantidad del stock disponible y sumarla al stock reservado.
     también deberá mantenerse actualizado el monto total del pedido de forma coherente
     con el detalle de productos solicitados.*/
+
    -- guardo el monto agregar cuanto debo sumar luego
     monto_a_agregar = cantidad_solicitada * (select precio_unitario from producto where id_producto = id_producto_aux);
     

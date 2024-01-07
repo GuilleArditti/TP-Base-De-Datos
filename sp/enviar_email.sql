@@ -13,7 +13,8 @@ declare
     direccion text := (select direccion from direccion_entrega d
     where new.id_usuarie=d.id_usuarie and new.id_direccion_entrega=d.direccion_entrega);
 
-    productos record;
+    productos table;
+    cadaProducto record;
     
 begin
 	
@@ -30,9 +31,9 @@ begin
     where id_pedido=new.id_pedido;
 
     --carga del detalle de los productos del pedido
-    for productos in (select * from productos)
+    for cadaProducto in (select * from productos)
     loop
-        productos_detalles := productos_detalles || 'nombre: ' || productos.nombre || ', precio: ' || productos.precio_unitario || E'\n';
+        productos_detalles := productos_detalles || 'nombre: ' || cadaProducto.nombre || ', precio: ' || cadaProducto.precio_unitario || E'\n';
     end loop;
 
     --obtener el email del cliente que realizo el pedido
@@ -58,7 +59,8 @@ declare
     direccion text:=(select direccion from direccion_entrega d
     where new.id_usuarie=d.id_usuarie and new.id_direccion_entrega=d.direccion_entrega);
 
-    productos record;
+    productos table;
+    cadaProducto record;
     
 
 begin
@@ -76,9 +78,9 @@ begin
     where id_pedido=new.id_pedido;
 
     --carga del detalle de los productos del pedido
-    for productos in (select * from productos)
+    for cadaProducto in (select * from productos)
     loop
-        productos_detalles := productos_detalles || 'nombre: ' || productos.nombre || ', precio: ' || productos.precio_unitario || E'\n';
+        productos_detalles := productos_detalles || 'nombre: ' || cadaProducto.nombre || ', precio: ' || cadaProducto.precio_unitario || E'\n';
     end loop;
 
     --obtener el email del cliente que realizo el pedido
@@ -103,7 +105,8 @@ declare
     direccion text:=(select direccion from direccion_entrega d
     where new.id_usuarie=d.id_usuarie and new.id_direccion_entrega=d.direccion_entrega);
 
-    productos record;
+    productos table;
+    cadaProducto record;
     
 
 begin
@@ -121,9 +124,9 @@ begin
     where id_pedido=new.id_pedido;
 
     --carga del detalle de los productos del pedido
-    for productos in (select * from productos)
+    for cadaProducto in (select * from productos)
     loop
-        productos_detalles := productos_detalles || 'nombre: ' || productos.nombre || ', precio: ' || productos.precio_unitario || E'\n';
+        productos_detalles := productos_detalles || 'nombre: ' || cadaProducto.nombre || ', precio: ' || cadaProducto.precio_unitario || E'\n';
     end loop;
 
     --obtener el email del cliente que realizo el pedido
