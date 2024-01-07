@@ -5,7 +5,7 @@ declare
     fecha_recibimiento_pedido date := current_date - 1;
     asunto_text text := 'Encuesta de satisfacción';
     cuerpo_email text :=' esperamos que este disfrutando su pedido. Lo invitamos a completar una breve encuesta en https:www.changoonline.com/encuestas. Gracias!';
-    usuarios_a_notificar table;
+    usuarios_a_notificar cliente;
     usuario record;
 
 begin

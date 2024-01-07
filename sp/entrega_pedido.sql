@@ -1,7 +1,7 @@
 create or replace function entregar_pedido(id_pedido_aux int) returns boolean as $$
 declare
     operacion text; 
-    productos_involucrados table;
+    productos_involucrados producto;
     producto_record record;
 begin
 

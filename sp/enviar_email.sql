@@ -13,7 +13,7 @@ declare
     direccion text := (select direccion from direccion_entrega d
     where new.id_usuarie=d.id_usuarie and new.id_direccion_entrega=d.direccion_entrega);
 
-    productos table;
+    productos producto;
     cadaProducto record;
     
 begin
@@ -59,7 +59,7 @@ declare
     direccion text:=(select direccion from direccion_entrega d
     where new.id_usuarie=d.id_usuarie and new.id_direccion_entrega=d.direccion_entrega);
 
-    productos table;
+    productos producto;
     cadaProducto record;
     
 
@@ -105,7 +105,7 @@ declare
     direccion text:=(select direccion from direccion_entrega d
     where new.id_usuarie=d.id_usuarie and new.id_direccion_entrega=d.direccion_entrega);
 
-    productos table;
+    productos producto;
     cadaProducto record;
     
 

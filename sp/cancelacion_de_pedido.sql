@@ -2,7 +2,7 @@ create or replace function cancelar_pedido(id_pedido_aux int) returns boolean as
 declare
 
 estado_pedido text;
-productos_a_actualizar table;
+productos_a_actualizar producto;
 producto_record record;
 
 begin

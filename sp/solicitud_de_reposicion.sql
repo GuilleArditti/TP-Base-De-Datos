@@ -2,12 +2,12 @@
 create or replace function solicitar_reposicion() returns boolean as $$
 declare  
     
-    productos_reponer table;
+    productos_reponer producto;
     p_record record;
     ret boolean;
     no_existe boolean;
     cantidad_a_reponer_aux int;
-	solicitud_table table;
+	solicitud_table reposicion;
     solicitud_record record;
 
 begin
@@ -23,7 +23,7 @@ set transaction isolation level serializable;
 	loop
 		--no existe solicitud con el producto
 		no_existe = p_record.id_producto not in (select id_producto from reposicion);
-		
+
 		if(no_existe) then
 			cantidad_a_reponer_aux = (p_record.stock_maximo - (p_record.stock_disponible + p_record.stock_reservado));
 			insert into reposicion(id_producto, fecha_solicitud, cantidad_a_reponer, estado)

@@ -1,8 +1,8 @@
 create or replace function crear_pedido(id_usuarie_aux int, id_direccion int) returns boolean as $$
 declare
 
-resultado table;
-resultado2 table;
+resultado direccion_entrega;
+resultado2 tarifa_entrega;
 costo_envio_aux decimal(12,2);
 
 begin
