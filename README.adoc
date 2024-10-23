@@ -101,5 +101,4 @@ end;
 
 Podemos observar que existe manipulacion de datos sensibles como _stock_disponible_, _stock_reservado_, cambios de _estado_, que deben manejarse correctamente, por ello la configuracion de isolation level.
 
-== Consideraciones finales
 
